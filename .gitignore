@@ -73,3 +73,8 @@ upload
 upload-win32
 html_out/
 TODO
+*.dsc
+*.build
+*.changes
+*.upload
+.vagrant

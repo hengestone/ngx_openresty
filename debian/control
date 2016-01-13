@@ -1,0 +1,35 @@
+Source: openresty
+Section: httpd
+Priority: optional
+Maintainer: Jason Staten <jstaten@peer60.com>
+Build-Depends: autotools-dev,
+               debhelper (>= 8.0.0),
+               dpkg-dev (>= 1.15.5),
+               libexpat-dev,
+               libgd2-xpm-dev,
+               libgeoip-dev,
+               liblua5.1-dev,
+               libmhash-dev,
+               libpam0g-dev,
+               libpcre3-dev,
+               libperl-dev,
+               libssl-dev,
+               libxslt1-dev,
+               po-debconf,
+               zlib1g-dev
+Standards-Version: 3.9.2
+Homepage: http://openresty.org/
+Vcs-Git: git://github.com/statianzo/openresty-ppa.git
+Vcs-Browser: https://github.com/statianzo/openresty-ppa
+
+Package: openresty
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Full-fledged web application server
+ OpenResty (aka. ngx_openresty) is a full-fledged web
+ application server by bundling the standard Nginx core,
+ lots of 3rd-party Nginx modules, as well as most of
+ their external dependencies.
+ This package is built for TileMan tile manager application,
+ but useful for other applications because there is NOT
+ any special binary/library chunk compiled in.

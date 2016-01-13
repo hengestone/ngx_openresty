@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+root=`perl -MCwd -e'print Cwd::abs_path(shift)' $(dirname -- "$0")/..`
+
+echo -n "ngx_openresty "
+. ./util/ver
+echo
+
+name=ngx_openresty-$version
+srcname=openresty_$version.orig.tar.gz
+
+cp -r $root/debian $root/$name/
+
+if [ -n $root/$srcname ];then
+  cp $root/${name}.tar.gz $root/$srcname
+fi
+
+cd $root/$name
+
+debuild -S -sa -tc -i

@@ -1,0 +1,4 @@
+[OpenResty]
+title=Web application Server (Nginx, HTTP + HTTPS)
+description=a full-fledged web application server
+ports=80,443/tcp

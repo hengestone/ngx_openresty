@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+# debian rule file of openresty for tileman 
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	./configure \
+	--prefix=/usr/lib/openresty \
+	--sbin-path=/usr/sbin/openresty \
+	--conf-path=/etc/openresty/nginx.conf \
+	--error-log-path=/var/log/openresty/error.log \
+	--http-log-path=/var/log/openresty/access.log \
+	--http-client-body-temp-path=/var/lib/openresty/body \
+	--http-proxy-temp-path=/var/lib/openresty/proxy \
+	--http-fastcgi-temp-path=/var/lib/openresty/fastcgi \
+	--http-scgi-temp-path=/var/lib/openresty/scgi \
+	--http-uwsgi-temp-path=/var/lib/openresty/uwsgi \
+	--lock-path=/var/lock/openresty.lock \
+	--pid-path=/run/openresty.pid

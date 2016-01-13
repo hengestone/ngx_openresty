@@ -1,0 +1,23 @@
+openresty (1.5.12.1-0sixty1~trusty2) trusty; urgency=medium
+
+  * Create /var/lib/openresty
+
+ -- Jason Staten (peer60) <jstaten@peer60.com>  Thu, 22 May 2014 22:01:43 +0000
+
+openresty (1.5.12.1-0ubuntu1~trusty1) trusty; urgency=low
+
+  * Versioned for ubuntu
+
+ -- Jason Staten (peer60) <jstaten@peer60.com>  Wed, 21 May 2013 23:28:06 +0000
+
+openresty (1.5.12.1) unstable; urgency=low
+
+  * New upstream v1.5.12.1 release.
+
+ -- Jason Staten (peer60) <jstaten@peer60.com>  Wed, 21 May 2013 21:28:06 +0000
+
+openresty (1.4.2.9) unstable; urgency=low
+
+  * New upstream v1.4.2.9 release.
+
+ -- Hiroshi Miura <miurahr@linux.com>  Sat, 05 Oct 2013 11:35:02 +0900

@@ -1,0 +1,45 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure)
+    logdir="/var/log/openresty"
+    vardir="/var/lib/openresty"
+    # Ensure existance and right state of log files and directory
+    if [ ! -d "$logdir" -a ! -L "$logdir" ]; then
+      mkdir "$logdir"
+      chown www-data:adm $logdir
+      chmod 0750 $logdir
+    fi
+
+    # Ensure existance and right state of data files and directory
+    if [ ! -d "$vardir" -a ! -L "$vardir" ]; then
+      mkdir "$vardir"
+      chown www-data:adm $vardir
+      chmod 0750 $vardir
+    fi
+
+    # For systemd, enable the nginx unit, but don't start it (just like the
+    # init script).
+    if [ -x /bin/systemctl ]; then
+      systemctl enable openresty.service >/dev/null 2>&1 || true
+    fi
+    # If a symlink doesn't exist and can be created, then create it.
+    if [ -z $2 ] && [ ! -e /etc/nginx/sites-enabled/default ] &&
+       [ -d /etc/openresty/sites-enabled ] && [ -d /etc/openresty/sites-available ]; then
+      ln -s /etc/openresty/sites-available/default /etc/openresty/sites-enabled/default
+    fi
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
