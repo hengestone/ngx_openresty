@@ -697,15 +697,15 @@ rm *.tar.gz
 
 cd ..
 cp $root/util/configure ./ || exit 1
-#markdown2pod -e utf8 -d GitHub $root/README.markdown|$root/util/fix-pod2markdown|pod2text > README || exit 1
+#go-md2man -e utf8 -d GitHub $root/README.markdown|$root/util/fix-pod2markdown|pod2text > README || exit 1
 cp $root/README.markdown ./ || exit 1
 cp $root/util/install bundle/ || exit 1
 mkdir util || exit 1
 cp $root/util/package-win32.sh util/ || exit 1
 cp $root/util/build-win32.sh util/ || exit 1
 cp $root/COPYRIGHT ./ || exit 1
-markdown2pod -e utf8 -d GitHub $root/doc/README-win32.md|$root/util/fix-pod2markdown|pod2text > README-win32.txt || exit 1
-unix2dos README-win32.txt || exit 1
+#go-md2man -e utf8 -d GitHub $root/doc/README-win32.md|$root/util/fix-pod2markdown|pod2text > README-win32.txt || exit 1
+#unix2dos README-win32.txt || exit 1
 find bundle -name '*~' -delete
 
 cd $root

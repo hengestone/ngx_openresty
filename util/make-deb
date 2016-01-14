@@ -6,8 +6,8 @@ echo -n "ngx_openresty "
 . ./util/ver
 echo
 
-name=ngx_openresty-$version
-srcname=openresty_$version.orig.tar.gz
+name=ngx_openresty_$version
+srcname=openresty-$version.orig.tar.gz
 
 cp -r $root/debian $root/$name/
 

@@ -1,3 +1,15 @@
+openresty (1.9.7.2rc1~cds1-trusty1) trusty; urgency=medium
+
+  * Update version number to satisfy Launchpad
+
+ -- Conrad Steenberg <conrad.steenberg@gmail.com>  Wed, 13 Jan 2016 18:04:42 -0800
+
+openresty (1.9.7.2rc1) trusty; urgency=medium
+
+  * New upstream 1.9.7.2rc1~trusty1 release.
+
+ -- Conrad Steenberg <conrad.steenberg@gmail.com>  Wed, 13 Jan 2016 16:19:36 -0800
+
 openresty (1.5.12.1-0sixty1~trusty2) trusty; urgency=medium
 
   * Create /var/lib/openresty
